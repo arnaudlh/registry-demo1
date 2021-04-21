@@ -1,5 +1,6 @@
 module "example" {
-  source = "../.."
+  source  = "aztfmod/caf/azurerm"
+  version = "5.3.2"
 
   azuread_apps                   = var.azuread_apps
   azuread_groups                 = var.azuread_groups
