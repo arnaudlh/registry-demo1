@@ -1,11 +1,7 @@
 module "example" {
   source  = "aztfmod/caf/azurerm"
-  version = "5.3.2"
+  version = "5.4.7"
 
-  azuread_apps                   = var.azuread_apps
-  azuread_groups                 = var.azuread_groups
-  azuread_roles                  = var.azuread_roles
-  azuread_users                  = var.azuread_users
   current_landingzone_key        = var.landingzone.key
   custom_role_definitions        = var.custom_role_definitions
   event_hub_auth_rules           = var.event_hub_auth_rules
@@ -25,6 +21,13 @@ module "example" {
   role_mapping                   = var.role_mapping
   storage_accounts               = var.storage_accounts
   tags                           = local.tags
+
+  azuread = {
+    azuread_apps                        = var.azuread_apps
+    azuread_groups                      = var.azuread_groups
+    azuread_roles                       = var.azuread_roles
+    azuread_users                       = var.azuread_users
+  }
 
   webapp = {
     azurerm_application_insights = var.azurerm_application_insights
